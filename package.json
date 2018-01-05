@@ -1,0 +1,16 @@
+{
+  "description": "ES6 Workshop for Saint Gobain",
+  "version": "1.0.0",
+  "author": "Alex",
+  "scripts": {
+    "start": "http-server bin/http-server"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
