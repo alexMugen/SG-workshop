@@ -44,4 +44,21 @@ li {
 a {
   color: #42b983;
 }
+.wrap{
+  padding: 0 30px;
+}
+.conclusion {
+  text-align: center;
+}
+.md-theme-default.md-icon.md-accent {
+  color: mediumseagreen;
+}
+.md-theme-default a:not(.md-button) {
+  color: #FBDE34;
+  margin: 0 20%;
+}
+.md-theme-default.md-button:not([disabled]).md-fab {
+  color: rgba(255, 255, 255, .87);
+  background-color: #333333;
+}
 </style>
