@@ -61,4 +61,12 @@ a {
   color: rgba(255, 255, 255, .87);
   background-color: #333333;
 }
+.md-theme-default code:not(.hljs) {
+  background-color: #000;
+  color: lightgreen;
+}
+.result {
+  border: 1px solid;
+  padding: 12px;
+}
 </style>

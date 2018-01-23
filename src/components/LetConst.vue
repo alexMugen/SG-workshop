@@ -78,7 +78,6 @@
         </md-button>
       </router-link>
     </md-layout>
-
   </section>
 </template>
 
@@ -113,16 +112,8 @@
 </script>
 
 <style scoped>
-  .md-theme-default code:not(.hljs) {
-    background-color: #000;
-    color: lightgreen;
-  }
   button {
     width: 20%;
     margin: 30px auto;
-  }
-  .result {
-    border: 1px solid;
-    padding: 12px;
   }
 </style>
