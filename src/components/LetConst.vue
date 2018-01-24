@@ -83,7 +83,6 @@
 
 <script>
   import MainTitle from './MainTitle'
-  import { JS } from '../allScripts'
   export default {
     components: {MainTitle},
     name: 'letConst',
@@ -100,7 +99,6 @@
     },
     methods: {
       run (str) {
-        JS.letConst()
         if (str === 'let') {
           this.results.let = true
         } else {

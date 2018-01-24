@@ -12,27 +12,72 @@
           };
         </pre>
       </code>
-      <p class="md-headline">2- Mais pas que...</p>
+      <br>
       <code type="javascript">
         <pre>
-          // Avant                                    // Après
-          let addition = function(a, b) {             let addition = (a, b) => a + b;
-            return a + b;
-          };
+          let arr = ['toto', 'tata', 'titi'];
+
+          let team = arr.map(member => {
+              return member + '!';
+          });
         </pre>
       </code>
-      <md-button class="md-raised md-primary" @click="run('let')" v-if="!results.let"><span>Execute code</span></md-button>
-      <div v-else="results.let">
-        <pre class="result" >
-          console.log(x);
-          // expected output: 2
+      <p class="md-headline">2- Mais pas que...</p>
+      <p class="md-subheading">les <i>functions arrows</i> jouent un role sur le contexte de <strong>THIS</strong></p>
+      <code type="javascript">
+        <pre>
+          // AVANT ES6, le code ne va pas marcher il faut utiliser une petite astuce bien connue..
+          function Person() {
+          this.age = 0;
 
-          console.log(y);
-          // expected output: 1
+          setInterval(function growUp() {
+            this.age++;
+            console.log(this.age)
+          }, 1000);
+        }
+        var p = new Person()
         </pre>
-        <p class="md-subheading conclusion"><md-icon class="md-accent">forward</md-icon><strong>LET</strong> permet de déclarer des variables dont la portée est limitée à celle du bloc dans lequel elles sont déclarées. </p><p class="md-subheading conclusion"><md-icon class="md-accent">forward</md-icon>la seule différence <strong>LET </strong> fonctionne avec les portées de bloc et <strong>VAR </strong> avec les portées des fonctions</p>
-
+      </code>
+      <md-button class="md-raised md-primary" @click="run('ex1')" v-if="!results.ex1"><span>Execute code</span></md-button>
+      <div v-else="results.ex1">
+        <pre class="result" >
+          NaN
+        </pre>
       </div>
+
+      <p class="md-subheading">Il fallait faire</p>
+      <code type="javascript">
+        <pre>
+         function Person() {
+            var self = this;
+            self.age = 0;
+
+            setInterval(function growUp() {
+              // La fonction de rappel refère à la variable `self` dont
+              // la valeur est l'objet espéré.
+              self.age++;
+            }, 1000);
+          }
+          var p = new Person()
+        </pre>
+      </code>
+
+      <p class="md-subheading">ES6 dans ta face !</p>
+      <code type="javascript">
+        <pre>
+          function Person() {
+              this.age = 0;
+
+              setInterval(() => {
+                setTimeout(() => {
+                  this.age++; // `this` referre proprement à l'objet person
+                }, 1000);
+              }, 1000);
+            }
+
+            var p = new Person();
+        </pre>
+      </code>
     </md-layout>
     <md-layout md-align="center">
       <router-link :to="{name: 'LetConst'}">
@@ -60,7 +105,16 @@
           title: 'Arrow'
         },
         results: {
-
+          ex1: false
+        }
+      }
+    },
+    methods: {
+      run (str) {
+        if (str === 'ex1') {
+          this.results.ex1 = true
+        } else {
+          this.results.ex2 = true
         }
       }
     }
