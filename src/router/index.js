@@ -21,6 +21,11 @@ const Arrow = resolve => {
     resolve(require('@/components/Arrow'))
   })
 }
+const Destructuring = resolve => {
+  require.ensure(['@/components/Destructuring'], () => {
+    resolve(require('@/components/Destructuring'))
+  })
+}
 
 Vue.use(Router)
 
@@ -47,6 +52,14 @@ export default new Router({
       name: 'Arrow',
       components: {
         default: Arrow,
+        MainTitle
+      }
+    },
+    {
+      path: '/destructuring',
+      name: 'Destructuring',
+      components: {
+        default: Destructuring,
         MainTitle
       }
     }

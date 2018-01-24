@@ -24,9 +24,9 @@
       </code>
       <p class="md-headline">2- Mais pas que...</p>
       <p class="md-subheading">les <i>functions arrows</i> jouent un role sur le contexte de <strong>THIS</strong></p>
+      <p class="md-subheading">avant ES6 (le code ne va pas marcher il faut utiliser une petite astuce bien connue..)</p>
       <code type="javascript">
         <pre>
-          // AVANT ES6, le code ne va pas marcher il faut utiliser une petite astuce bien connue..
           function Person() {
           this.age = 0;
 
@@ -45,7 +45,7 @@
         </pre>
       </div>
 
-      <p class="md-subheading">Il fallait faire</p>
+      <p class="md-subheading">Avant ES6, il fallait faire</p>
       <code type="javascript">
         <pre>
          function Person() {
@@ -78,6 +78,30 @@
             var p = new Person();
         </pre>
       </code>
+      <p class="md-headline">3. les params</p>
+      <p class="md-subheading">Avant ES6</p>
+      <code type="javascript">
+        <pre>
+          'use strict';
+
+          var getFullName = function getFullName() {
+            var first = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'El';
+            var last = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'patron';
+            return 'your name is ' + first + ' ' + last;
+          };
+          var fullName = getFullName();
+          console.log(fullName);
+        </pre>
+      </code>
+
+      <p class="md-subheading">ES6 dans ta face !</p>
+      <code type="javascript">
+        <pre>
+          let getFullName = (first = 'El', last = 'patron') => `your name is ${first} ${last}`
+          let fullName = getFullName();
+          console.log(fullName)
+        </pre>
+      </code>
     </md-layout>
     <md-layout md-align="center">
       <router-link :to="{name: 'LetConst'}">
@@ -85,7 +109,7 @@
           <md-icon>arrow_back</md-icon>
         </md-button>
       </router-link>
-      <router-link :to="{name: 'Arrow'}">
+      <router-link :to="{name: 'Destructuring'}">
         <md-button class="md-fab">
           <md-icon>arrow_forward</md-icon>
         </md-button>
@@ -120,7 +144,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>

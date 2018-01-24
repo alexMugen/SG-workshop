@@ -37,6 +37,12 @@ export default {
           route: {
             name: 'Arrow'
           }
+        },
+        {
+          title: 'Destructuring',
+          route: {
+            name: 'Destructuring'
+          }
         }
       ]
     }
