@@ -26,6 +26,11 @@ const Destructuring = resolve => {
     resolve(require('@/components/Destructuring'))
   })
 }
+const Spread = resolve => {
+  require.ensure(['@/components/Spread'], () => {
+    resolve(require('@/components/Spread'))
+  })
+}
 
 Vue.use(Router)
 
@@ -60,6 +65,14 @@ export default new Router({
       name: 'Destructuring',
       components: {
         default: Destructuring,
+        MainTitle
+      }
+    },
+    {
+      path: '/spread',
+      name: 'Spread',
+      components: {
+        default: Spread,
         MainTitle
       }
     }

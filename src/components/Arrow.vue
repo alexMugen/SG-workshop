@@ -62,7 +62,7 @@
         </pre>
       </code>
 
-      <p class="md-subheading">ES6 dans ta face !</p>
+      <p class="md-subheading">ES6  !</p>
       <code type="javascript">
         <pre>
           function Person() {
@@ -94,7 +94,7 @@
         </pre>
       </code>
 
-      <p class="md-subheading">ES6 dans ta face !</p>
+      <p class="md-subheading">ES6  !</p>
       <code type="javascript">
         <pre>
           let getFullName = (first = 'El', last = 'patron') => `your name is ${first} ${last}`

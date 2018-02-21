@@ -86,3 +86,16 @@ EXO1 {
 }
 
 // ======================== ARRAY ======================== //
+
+// ======================== Destructuring ======================== //
+{
+  const citizen = {
+    firstName: 'foo',
+    lastName: 'foo',
+    age: '25',
+    job: 'dev'
+  }
+  let firstName = citizen.firstName
+  let lastName = citizen.lastName
+  let age = citizen.age
+}

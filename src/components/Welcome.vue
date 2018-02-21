@@ -5,7 +5,7 @@
     </md-layout>
     <md-layout md-align="center">
       <md-card md-with-hover v-for="(workshop, index) in workshops " :key="index" >
-       <router-link :to="{name: workshop.route.name}" tag="div">
+       <router-link :to="{name: workshop.route.name}" tag="div" :class="{'inProgress' : workshop.inProgress}">
           <md-card-media>
             <div class="media"></div>
           </md-card-media>
@@ -30,19 +30,43 @@ export default {
           title: 'Let & Const',
           route: {
             name: 'LetConst'
-          }
+          },
+          inProgress: false
         },
         {
           title: 'Arrow',
           route: {
             name: 'Arrow'
-          }
+          },
+          inProgress: false
         },
         {
           title: 'Destructuring',
           route: {
             name: 'Destructuring'
-          }
+          },
+          inProgress: false
+        },
+        {
+          title: 'Spread Operator',
+          route: {
+            name: 'Spread'
+          },
+          inProgress: false
+        },
+        {
+          title: 'Objet litteral v.ES6',
+          route: {
+            name: ''
+          },
+          inProgress: true
+        },
+        {
+          title: 'Class',
+          route: {
+            name: ''
+          },
+          inProgress: true
         }
       ]
     }
@@ -74,6 +98,10 @@ export default {
     background: #FBDE34 no-repeat center center;
     background-size: contain;
     background-image: url('~assets/rock2.png')
+  }
+  .inProgress {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
   .md-title {
     text-align: center;

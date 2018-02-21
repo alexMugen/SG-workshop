@@ -1,7 +1,16 @@
 <template>
   <section id="main-title">
-    <h1 class="md-display-3">{{infoHeader.title}}</h1>
+    <h1 class="md-display-3">
+      <router-link :to="{name: 'welcome'}">
+        <md-button class="md-fab">
+          <md-icon>home</md-icon>
+        </md-button>
+      </router-link>
+      {{infoHeader.title}}
+    </h1>
+
     <p class="md-display-1 title">{{infoHeader.subtitle}}</p>
+
   </section>
 </template>
 <script>
@@ -29,6 +38,10 @@
       margin: 0;
       text-align: center;
       color: #000;
+      a {
+        margin: 0;
+        float: left;
+      }
     }
     .title {
       text-align: center;
