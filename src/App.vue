@@ -50,20 +50,20 @@ a {
 .conclusion {
   text-align: center;
 }
-.md-theme-default.md-icon.md-accent {
-  color: mediumseagreen;
+.md-theme-default.md-icon.md-accent{
+  color: mediumseagreen!important;
 }
 .md-theme-default a:not(.md-button) {
   color: #FBDE34;
   margin: 0 20%;
 }
 .md-theme-default.md-button:not([disabled]).md-fab {
-  color: rgba(255, 255, 255, .87);
-  background-color: #333333;
+  color: rgba(255, 255, 255, .87)!important;
+  background-color: #333333!important;
 }
 .md-theme-default code:not(.hljs) {
-  background-color: #000;
-  color: lightgreen;
+  background-color: #000!important;
+  color: lightgreen!important;
 }
 .result {
   border: 1px solid;
